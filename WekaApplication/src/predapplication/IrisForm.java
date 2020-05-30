@@ -9,14 +9,11 @@ package predapplication;
  *
  * @author Rossen
  */
-// Java program to implement 
-// a Simple Registration Form 
-// using Java Swing 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class InputForm
+public class IrisForm
         extends JFrame
         implements ActionListener {
 
@@ -40,7 +37,6 @@ public class InputForm
     private JComboBox month;
     private JComboBox year;
     private JLabel add;
-    private JTextArea tadd;
     private JCheckBox term;
     private JButton sub;
     private JButton reset;
@@ -50,10 +46,10 @@ public class InputForm
 
     // constructor, to initialize the components 
     // with default values. 
-    public InputForm() {
+    public IrisForm() {
         setTitle("Iris Classifier");
         setBounds(300, 90, 900, 600);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(HIDE_ON_CLOSE);
         setResizable(false);
 
         c = getContentPane();
@@ -151,7 +147,7 @@ public class InputForm
         resadd.setFont(new Font("Arial", Font.PLAIN, 15));
         resadd.setSize(200, 75);
         resadd.setLocation(580, 175);
-        resadd.setLineWrap(true);
+        resadd.setLineWrap(true); 
         c.add(resadd);
 
         setVisible(true);
@@ -162,28 +158,35 @@ public class InputForm
     // by the user and act accordingly 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == sub) {
-            if (term.isSelected()) {
-                double[] data = new double[4];
-                data[0] = Double.parseDouble(tslength.getText());
-                data[1] = Double.parseDouble(tswidth.getText());
-                data[2] = Double.parseDouble(tplength.getText());
-                data[3] = Double.parseDouble(tpwidth.getText());
-                Classifier classifier = new Classifier("nb");
-                String result = classifier.Clasify(data);
-                res.setText("Classified Successfully");
-                resadd.setText("Classified as: " + result);
-                
-            } else {
-                tout.setText("");
-                resadd.setText("");
-                res.setText("Please accept the"
-                        + " terms & conditions..");
+            try {
+                if (term.isSelected()) {
+                    double[] data = new double[4];
+                    data[0] = Double.parseDouble(tslength.getText());
+                    data[1] = Double.parseDouble(tswidth.getText());
+                    data[2] = Double.parseDouble(tplength.getText());
+                    data[3] = Double.parseDouble(tpwidth.getText());
+                    Classifier classifier = new Classifier("nb");
+                    String result = Classifier.Clasify(data);
+                    res.setText("Classified Successfully");
+                    resadd.setText("Classified as: " + result);
+                    System.out.print(resadd.getText());
+
+                } else {
+                    tout.setText("");
+                    resadd.setText("");
+                    res.setText("Please accept the"
+                            + " terms & conditions..");
+                } 
+            } catch(Exception ex) {
+                if(ex instanceof NumberFormatException) {
+                     res.setText("All fields must be filled!");
+                }
             }
+
         } else if (e.getSource() == reset) {
             String def = "";
             tslength.setText(def);
             tplength.setText(def);
-            tadd.setText(def);
             tswidth.setText(def);
             tpwidth.setText(def);
             res.setText(def);

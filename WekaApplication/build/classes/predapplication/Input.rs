@@ -1,2 +1,0 @@
-predapplication.MyFrame
-predapplication.Registration

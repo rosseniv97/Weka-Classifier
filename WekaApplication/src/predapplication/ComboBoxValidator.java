@@ -6,35 +6,37 @@
 package predapplication;
 
 import java.util.LinkedList;
-import java.util.List;
 import javax.swing.InputVerifier;
+import javax.swing.JComboBox;
 import javax.swing.JComponent;
-import javax.swing.JTextField;
 
 /**
  *
  * @author Rossen
  */
-public class TextFieldValidator extends InputVerifier {
+public class ComboBoxValidator extends InputVerifier {
 
     @Override
     public boolean verify(JComponent input) {
-
         try {
-            double value = Double.parseDouble(((JTextField) input).getText());
+             int value = ((JComboBox) input).getSelectedIndex();
+                if (value == 0) {
+                    return false;
+                }
         } catch (NumberFormatException e) {
             return false;
         }
         return true;
     }
 
-    public boolean verify(LinkedList<JTextField> inputs) {
-
+    public boolean verify(LinkedList<JComboBox> inputs) {
         try {
             for (JComponent input : inputs) {
-                double value = Double.parseDouble(((JTextField) input).getText());
+                int value = ((JComboBox) input).getSelectedIndex();
+                if (value == 0) {
+                    return false;
+                }
             }
-
         } catch (NumberFormatException e) {
             return false;
         }

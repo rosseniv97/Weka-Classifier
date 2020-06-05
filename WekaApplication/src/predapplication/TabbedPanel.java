@@ -6,6 +6,8 @@
 package predapplication;
 
 import javax.swing.JComponent;
+import java.util.LinkedList;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -17,12 +19,15 @@ public class TabbedPanel extends javax.swing.JFrame {
      * Creates new form TabbedPanel
      */
     private final TextFieldValidator fieldValidator = new TextFieldValidator();
-
-    ;
+    private final ComboBoxValidator comboValidator = new ComboBoxValidator();
+    private final LinkedList<JComboBox> personalInfoComboBoxes = new LinkedList();
+    //private LinkedList<InputVerifier> validatorsList = new LinkedList<InputVerifier>();
 
     public TabbedPanel() {
         initComponents();
-       /* ageField.setInputVerifier(fieldValidator);
+        personalInfoComboBoxes.add(sexCombo);
+        personalInfoComboBoxes.add(educationCombo);
+        /* ageField.setInputVerifier(fieldValidator);
         cigsField.setInputVerifier(fieldValidator);
         cholesterolField.setInputVerifier(fieldValidator);
         systolicField.setInputVerifier(fieldValidator);
@@ -41,15 +46,25 @@ public class TabbedPanel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        termsDialog = new javax.swing.JDialog();
+        jLabel4 = new javax.swing.JLabel();
+        confirmDialogButton = new javax.swing.JButton();
+        TabbedPane = new javax.swing.JTabbedPane();
         Panel = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        IntroPanel = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        terms = new javax.swing.JCheckBox();
+        jLabel3 = new javax.swing.JLabel();
+        nextButton = new javax.swing.JButton();
+        PersonalInfo = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel27 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         sexCombo = new javax.swing.JComboBox<>();
-        sexMsgLabel1 = new javax.swing.JLabel();
+        sexMsgLabel = new javax.swing.JLabel();
         jPanel28 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         ageField = new javax.swing.JTextField();
@@ -58,9 +73,8 @@ public class TabbedPanel extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         educationCombo = new javax.swing.JComboBox<>();
         eduMsgLabel = new javax.swing.JLabel();
+        piNextButton = new javax.swing.JButton();
         HearthDiseasePanel = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
         resultTextArea = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
@@ -113,12 +127,48 @@ public class TabbedPanel extends javax.swing.JFrame {
         bpmedsCheck = new javax.swing.JCheckBox();
         validationLabel = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         submitBtn = new javax.swing.JButton();
         resetBtn = new javax.swing.JButton();
-        terms = new javax.swing.JCheckBox();
         jPanel1 = new javax.swing.JPanel();
+
+        termsDialog.setSize(400,200);
+        termsDialog.setLocationRelativeTo(IntroPanel);
+        termsDialog.setLocation(300,300);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setText("You must accept the terms of service");
+
+        confirmDialogButton.setText("OK");
+        confirmDialogButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmDialogButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout termsDialogLayout = new javax.swing.GroupLayout(termsDialog.getContentPane());
+        termsDialog.getContentPane().setLayout(termsDialogLayout);
+        termsDialogLayout.setHorizontalGroup(
+            termsDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(termsDialogLayout.createSequentialGroup()
+                .addGroup(termsDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(termsDialogLayout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(confirmDialogButton))
+                    .addGroup(termsDialogLayout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel4)))
+                .addContainerGap(73, Short.MAX_VALUE))
+        );
+        termsDialogLayout.setVerticalGroup(
+            termsDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(termsDialogLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(confirmDialogButton)
+                .addContainerGap(79, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -133,12 +183,97 @@ public class TabbedPanel extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
+        Panel.setLayout(PanelLayout);
+        PanelLayout.setHorizontalGroup(
+            PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLayout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(202, 202, 202)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(289, Short.MAX_VALUE))
+        );
+        PanelLayout.setVerticalGroup(
+            PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLayout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(210, 210, 210)
+                .addComponent(jLabel1)
+                .addContainerGap(246, Short.MAX_VALUE))
+        );
+
+        TabbedPane.addTab("Main", Panel);
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("MS Gothic", 1, 12)); // NOI18N
+        jTextArea2.setRows(5);
+        jTextArea2.setText("Before using \"MyMedCheck\", please read the Terms of Service.\nRemember that:\n\nThe result is not a diagnosis.\nIt is for informational purposes only and \ndoes not represent, in any way, a qualified\nmedical opinion. \n\nIf this is an emergency, \ncall your local emergency numberimmediately. \nDo not proceed with this checkup tool.\nMedical attention is required immediately.\n\nYour data is safe. Information that you provide is \nanonymous and not shared with anyone.");
+        jTextArea2.setEnabled(false);
+        jScrollPane2.setViewportView(jTextArea2);
+
+        terms.setText("Accept terms");
+        terms.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                termsActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Terms of Service");
+
+        nextButton.setText("Next");
+        nextButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout IntroPanelLayout = new javax.swing.GroupLayout(IntroPanel);
+        IntroPanel.setLayout(IntroPanelLayout);
+        IntroPanelLayout.setHorizontalGroup(
+            IntroPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IntroPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(315, 315, 315))
+            .addGroup(IntroPanelLayout.createSequentialGroup()
+                .addGap(211, 211, 211)
+                .addGroup(IntroPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(IntroPanelLayout.createSequentialGroup()
+                        .addComponent(terms)
+                        .addGap(278, 278, 278)
+                        .addComponent(nextButton)))
+                .addContainerGap(159, Short.MAX_VALUE))
+        );
+        IntroPanelLayout.setVerticalGroup(
+            IntroPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IntroPanelLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(IntroPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(terms)
+                    .addComponent(nextButton))
+                .addContainerGap(279, Short.MAX_VALUE))
+        );
+
+        TabbedPane.addTab("Introduction", IntroPanel);
+
         jLabel25.setText("Sex: ");
 
-        sexCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        sexCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(no selection)", "Female", "Male" }));
+        sexCombo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                sexComboFocusLost(evt);
+            }
+        });
 
-        sexMsgLabel1.setText("Please select your gender!");
-        ageMsgLabel.setVisible(false);
+        sexMsgLabel.setText("Please select your gender!");
+        sexMsgLabel.setVisible(false);
 
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
@@ -147,14 +282,12 @@ public class TabbedPanel extends javax.swing.JFrame {
             .addGroup(jPanel27Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel27Layout.createSequentialGroup()
-                        .addComponent(sexMsgLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(38, Short.MAX_VALUE))
+                    .addComponent(sexMsgLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel27Layout.createSequentialGroup()
                         .addComponent(jLabel25)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sexCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50))))
+                        .addGap(108, 108, 108)
+                        .addComponent(sexCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel27Layout.setVerticalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,7 +297,7 @@ public class TabbedPanel extends javax.swing.JFrame {
                     .addComponent(jLabel25)
                     .addComponent(sexCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(sexMsgLabel1))
+                .addComponent(sexMsgLabel))
         );
 
         jLabel26.setText("Age:");
@@ -187,12 +320,12 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel28Layout.createSequentialGroup()
                         .addComponent(ageMsgLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(20, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel28Layout.createSequentialGroup()
                         .addComponent(jLabel26)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(111, 111, 111)
                         .addComponent(ageField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58))))
+                        .addGap(69, 69, 69))))
         );
         jPanel28Layout.setVerticalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,7 +340,12 @@ public class TabbedPanel extends javax.swing.JFrame {
 
         jLabel27.setText("Education");
 
-        educationCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        educationCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(no selection)", "Level 1", "Level 2", "Level 3", "Level 4" }));
+        educationCombo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                educationComboFocusLost(evt);
+            }
+        });
         educationCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 educationComboActionPerformed(evt);
@@ -215,7 +353,12 @@ public class TabbedPanel extends javax.swing.JFrame {
         });
 
         eduMsgLabel.setText("Please select your education!");
-        ageMsgLabel.setVisible(false);
+        eduMsgLabel.setVisible(false);
+        eduMsgLabel.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                eduMsgLabelFocusLost(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
@@ -226,12 +369,12 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel29Layout.createSequentialGroup()
                         .addComponent(eduMsgLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(20, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel29Layout.createSequentialGroup()
                         .addComponent(jLabel27)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(educationCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33))))
+                        .addGap(78, 78, 78)
+                        .addComponent(educationCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))))
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,6 +387,13 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addComponent(eduMsgLabel))
         );
 
+        piNextButton.setText("Next");
+        piNextButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                piNextButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -251,10 +401,13 @@ public class TabbedPanel extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(64, Short.MAX_VALUE))
+                    .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(piNextButton)
+                        .addGap(11, 11, 11)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,45 +418,28 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(piNextButton))
         );
 
-        javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
-        Panel.setLayout(PanelLayout);
-        PanelLayout.setHorizontalGroup(
-            PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelLayout.createSequentialGroup()
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelLayout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanelLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(112, 112, 112)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(276, Short.MAX_VALUE))
+        javax.swing.GroupLayout PersonalInfoLayout = new javax.swing.GroupLayout(PersonalInfo);
+        PersonalInfo.setLayout(PersonalInfoLayout);
+        PersonalInfoLayout.setHorizontalGroup(
+            PersonalInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PersonalInfoLayout.createSequentialGroup()
+                .addContainerGap(225, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(202, 202, 202))
         );
-        PanelLayout.setVerticalGroup(
-            PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelLayout.createSequentialGroup()
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelLayout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanelLayout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(133, 133, 133)
-                .addComponent(jLabel1)
-                .addContainerGap(253, Short.MAX_VALUE))
+        PersonalInfoLayout.setVerticalGroup(
+            PersonalInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PersonalInfoLayout.createSequentialGroup()
+                .addGap(117, 117, 117)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(295, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Main", Panel);
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        TabbedPane.addTab("Personal Information", PersonalInfo);
 
         resultTextArea.setColumns(20);
         resultTextArea.setRows(5);
@@ -828,8 +964,6 @@ public class TabbedPanel extends javax.swing.JFrame {
 
         jLabel18.setText("Result and Recommendations:");
 
-        jLabel19.setText("Terms and Conditions:");
-
         submitBtn.setText("Submit");
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -864,13 +998,6 @@ public class TabbedPanel extends javax.swing.JFrame {
                     .addComponent(resetBtn)))
         );
 
-        terms.setText("Accept terms");
-        terms.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                termsActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout HearthDiseasePanelLayout = new javax.swing.GroupLayout(HearthDiseasePanel);
         HearthDiseasePanel.setLayout(HearthDiseasePanelLayout);
         HearthDiseasePanelLayout.setHorizontalGroup(
@@ -884,18 +1011,10 @@ public class TabbedPanel extends javax.swing.JFrame {
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(HearthDiseasePanelLayout.createSequentialGroup()
                         .addGap(101, 101, 101)
-                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(HearthDiseasePanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(HearthDiseasePanelLayout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(jLabel19)))
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(HearthDiseasePanelLayout.createSequentialGroup()
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(terms)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         HearthDiseasePanelLayout.setVerticalGroup(
@@ -907,47 +1026,41 @@ public class TabbedPanel extends javax.swing.JFrame {
                         .addComponent(jLabel18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61)
-                        .addComponent(jLabel19)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 363, Short.MAX_VALUE))
                     .addGroup(HearthDiseasePanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addGap(18, 18, 18)))
-                .addGroup(HearthDiseasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(terms, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
         );
 
-        jTabbedPane1.addTab("HearthDisease", HearthDiseasePanel);
+        TabbedPane.addTab("HearthDisease", HearthDiseasePanel);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 787, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 657, Short.MAX_VALUE)
+            .addGap(0, 650, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("HearthAttack", jPanel1);
+        TabbedPane.addTab("HearthAttack", jPanel1);
 
-        jTabbedPane1.setSelectedIndex(0);
+        TabbedPane.setSelectedIndex(0);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(TabbedPane, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(TabbedPane)
         );
 
         pack();
@@ -985,7 +1098,7 @@ public class TabbedPanel extends javax.swing.JFrame {
                 HearthDiseaseClassifier hdClassfier = new HearthDiseaseClassifier();
                 double[] fieldData = new double[15];
                 try {
-                    fieldData[0] = sexCombo.getSelectedIndex();
+                    fieldData[0] = sexCombo.getSelectedIndex() == 1 ? 0 : 1;
                     fieldData[1] = educationCombo.getSelectedIndex() + 1;
                     fieldData[2] = Double.parseDouble(ageField.getText());
                     fieldData[3] = smokeCheck.isSelected() ? 1 : 0;
@@ -1040,7 +1153,7 @@ public class TabbedPanel extends javax.swing.JFrame {
     }//GEN-LAST:event_resetBtnActionPerformed
 
     private void cigsFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cigsFieldFocusLost
-         if (!fieldValidator.verify(cigsField)) {
+        if (!fieldValidator.verify(cigsField)) {
             cigsMsgLabel.setVisible(true);
         } else {
             cigsMsgLabel.setVisible(false);
@@ -1099,12 +1212,49 @@ public class TabbedPanel extends javax.swing.JFrame {
 
     private void cholesterolFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cholesterolFieldFocusLost
         if (!fieldValidator.verify(cholesterolField)) {
-            cholMsgLabel.setVisible(true); 
+            cholMsgLabel.setVisible(true);
         } else {
             cholMsgLabel.setVisible(false);
-
+        }
     }//GEN-LAST:event_cholesterolFieldFocusLost
-    }
+
+    private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
+        if (!terms.isSelected()) {
+            termsDialog.setVisible(true);
+            return;
+        }
+        TabbedPane.setSelectedComponent(PersonalInfo);
+
+    }//GEN-LAST:event_nextButtonActionPerformed
+
+    private void confirmDialogButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmDialogButtonActionPerformed
+        termsDialog.setVisible(false);
+    }//GEN-LAST:event_confirmDialogButtonActionPerformed
+
+    private void sexComboFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sexComboFocusLost
+        if (!comboValidator.verify(sexCombo)) {
+            sexMsgLabel.setVisible(true);
+        } else {
+            sexMsgLabel.setVisible(false);
+        }
+    }//GEN-LAST:event_sexComboFocusLost
+
+    private void educationComboFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_educationComboFocusLost
+        if (!comboValidator.verify(educationCombo)) {
+            eduMsgLabel.setVisible(true);
+        } else {
+            eduMsgLabel.setVisible(false);
+        }    }//GEN-LAST:event_educationComboFocusLost
+
+    private void piNextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_piNextButtonActionPerformed
+        if (fieldValidator.verify(ageField) && comboValidator.verify(personalInfoComboBoxes)) {
+            TabbedPane.setSelectedComponent(HearthDiseasePanel);
+        }
+    }//GEN-LAST:event_piNextButtonActionPerformed
+
+    private void eduMsgLabelFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_eduMsgLabelFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eduMsgLabelFocusLost
 
     /**
      * @param args the command line arguments
@@ -1144,7 +1294,10 @@ public class TabbedPanel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel HearthDiseasePanel;
+    private javax.swing.JPanel IntroPanel;
     private javax.swing.JPanel Panel;
+    private javax.swing.JPanel PersonalInfo;
+    private javax.swing.JTabbedPane TabbedPane;
     private javax.swing.JTextField ageField;
     private javax.swing.JTextField ageField1;
     private javax.swing.JTextField ageField2;
@@ -1159,6 +1312,7 @@ public class TabbedPanel extends javax.swing.JFrame {
     private javax.swing.JTextField cholesterolField;
     private javax.swing.JTextField cigsField;
     private javax.swing.JLabel cigsMsgLabel;
+    private javax.swing.JButton confirmDialogButton;
     private javax.swing.JLabel diaMsgLabel;
     private javax.swing.JCheckBox diabetesCheck;
     private javax.swing.JTextField diastolicField;
@@ -1179,7 +1333,6 @@ public class TabbedPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
@@ -1189,6 +1342,8 @@ public class TabbedPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1223,18 +1378,20 @@ public class TabbedPanel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JButton nextButton;
+    private javax.swing.JButton piNextButton;
     private javax.swing.JButton resetBtn;
     private javax.swing.JTextArea resultTextArea;
     private javax.swing.JComboBox<String> sexCombo;
-    private javax.swing.JLabel sexMsgLabel1;
+    private javax.swing.JLabel sexMsgLabel;
     private javax.swing.JCheckBox smokeCheck;
     private javax.swing.JCheckBox strokeCheck;
     private javax.swing.JButton submitBtn;
     private javax.swing.JLabel sysMsgLabel;
     private javax.swing.JTextField systolicField;
     private javax.swing.JCheckBox terms;
+    private javax.swing.JDialog termsDialog;
     private javax.swing.JLabel validationLabel;
     // End of variables declaration//GEN-END:variables
 }

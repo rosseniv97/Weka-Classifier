@@ -5,9 +5,12 @@
  */
 package predapplication;
 
+import java.util.EventObject;
 import javax.swing.JComponent;
 import java.util.LinkedList;
 import javax.swing.JComboBox;
+import javax.swing.JTextField;
+import javax.swing.event.ChangeEvent;
 
 /**
  *
@@ -21,12 +24,21 @@ public class TabbedPanel extends javax.swing.JFrame {
     private final TextFieldValidator fieldValidator = new TextFieldValidator();
     private final ComboBoxValidator comboValidator = new ComboBoxValidator();
     private final LinkedList<JComboBox> personalInfoComboBoxes = new LinkedList();
+    private final LinkedList<JTextField> heartDiseaseFields = new LinkedList();
     //private LinkedList<InputVerifier> validatorsList = new LinkedList<InputVerifier>();
 
     public TabbedPanel() {
         initComponents();
         personalInfoComboBoxes.add(sexCombo);
         personalInfoComboBoxes.add(educationCombo);
+        heartDiseaseFields.add(bmiField);
+        heartDiseaseFields.add(cholesterolField);
+        heartDiseaseFields.add(diastolicField);
+        heartDiseaseFields.add(cigsField);
+        heartDiseaseFields.add(glucoseField);
+        heartDiseaseFields.add(hearthField);
+        heartDiseaseFields.add(systolicField);
+
         /* ageField.setInputVerifier(fieldValidator);
         cigsField.setInputVerifier(fieldValidator);
         cholesterolField.setInputVerifier(fieldValidator);
@@ -49,6 +61,9 @@ public class TabbedPanel extends javax.swing.JFrame {
         termsDialog = new javax.swing.JDialog();
         jLabel4 = new javax.swing.JLabel();
         confirmDialogButton = new javax.swing.JButton();
+        validationDialog = new javax.swing.JDialog();
+        jLabel19 = new javax.swing.JLabel();
+        okButton = new javax.swing.JButton();
         TabbedPane = new javax.swing.JTabbedPane();
         Panel = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
@@ -135,6 +150,7 @@ public class TabbedPanel extends javax.swing.JFrame {
         termsDialog.setSize(400,200);
         termsDialog.setLocationRelativeTo(IntroPanel);
         termsDialog.setLocation(300,300);
+        termsDialog.setResizable(false);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("You must accept the terms of service");
@@ -168,6 +184,44 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(confirmDialogButton)
                 .addContainerGap(79, Short.MAX_VALUE))
+        );
+
+        validationDialog.setSize(400,200);
+        validationDialog.setLocationRelativeTo(IntroPanel);
+        validationDialog.setLocation(300,300);
+        validationDialog.setVisible(false);
+        validationDialog.setResizable(false);
+
+        jLabel19.setText("Before proceeding you must enter the required valid information");
+
+        okButton.setText("OK");
+        okButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                okButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout validationDialogLayout = new javax.swing.GroupLayout(validationDialog.getContentPane());
+        validationDialog.getContentPane().setLayout(validationDialogLayout);
+        validationDialogLayout.setHorizontalGroup(
+            validationDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(validationDialogLayout.createSequentialGroup()
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addComponent(jLabel19)
+                .addGap(22, 22, 22))
+            .addGroup(validationDialogLayout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addComponent(okButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        validationDialogLayout.setVerticalGroup(
+            validationDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(validationDialogLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(okButton)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1094,42 +1148,48 @@ public class TabbedPanel extends javax.swing.JFrame {
         JComponent[] fieldsArr = {sexCombo, ageField, smokeCheck, cigsField, bpmedsCheck, strokeCheck, hypCheck, diabetesCheck, cholesterolField, systolicField, diastolicField, hearthField, bmiField, glucoseField};
         resultTextArea.setText("");
         if (evt.getSource() == submitBtn) {
+
             if (terms.isSelected()) {
-                HearthDiseaseClassifier hdClassfier = new HearthDiseaseClassifier();
-                double[] fieldData = new double[15];
-                try {
-                    fieldData[0] = sexCombo.getSelectedIndex() == 1 ? 0 : 1;
-                    fieldData[1] = educationCombo.getSelectedIndex() + 1;
-                    fieldData[2] = Double.parseDouble(ageField.getText());
-                    fieldData[3] = smokeCheck.isSelected() ? 1 : 0;
-                    fieldData[4] = Double.parseDouble(cigsField.getText());
-                    fieldData[5] = bpmedsCheck.isSelected() ? 1 : 0;
-                    fieldData[6] = strokeCheck.isSelected() ? 1 : 0;
-                    fieldData[7] = hypCheck.isSelected() ? 1 : 0;
-                    fieldData[8] = diabetesCheck.isSelected() ? 1 : 0;
-                    fieldData[9] = Double.parseDouble(cholesterolField.getText());
-                    fieldData[10] = Double.parseDouble(systolicField.getText());
-                    fieldData[11] = Double.parseDouble(diastolicField.getText());
-                    fieldData[12] = Double.parseDouble(hearthField.getText());
-                    fieldData[13] = Double.parseDouble(bmiField.getText());
-                    fieldData[14] = Double.parseDouble(glucoseField.getText());
+                if (fieldValidator.verify(heartDiseaseFields)) {
+                    HearthDiseaseClassifier hdClassfier = new HearthDiseaseClassifier();
+                    double[] fieldData = new double[15];
+                    try {
+                        fieldData[0] = sexCombo.getSelectedIndex() == 1 ? 0 : 1;
+                        fieldData[1] = educationCombo.getSelectedIndex() + 1;
+                        fieldData[2] = Double.parseDouble(ageField.getText());
+                        fieldData[3] = smokeCheck.isSelected() ? 1 : 0;
+                        fieldData[4] = Double.parseDouble(cigsField.getText());
+                        fieldData[5] = bpmedsCheck.isSelected() ? 1 : 0;
+                        fieldData[6] = strokeCheck.isSelected() ? 1 : 0;
+                        fieldData[7] = hypCheck.isSelected() ? 1 : 0;
+                        fieldData[8] = diabetesCheck.isSelected() ? 1 : 0;
+                        fieldData[9] = Double.parseDouble(cholesterolField.getText());
+                        fieldData[10] = Double.parseDouble(systolicField.getText());
+                        fieldData[11] = Double.parseDouble(diastolicField.getText());
+                        fieldData[12] = Double.parseDouble(hearthField.getText());
+                        fieldData[13] = Double.parseDouble(bmiField.getText());
+                        fieldData[14] = Double.parseDouble(glucoseField.getText());
 
-                    String classResult = hdClassfier.Classify(fieldData);
-                    if (classResult.equals("1")) {
-                        resultTextArea.setText("You are at risk of Coronary Heart Disease in the next 10 years.\n Please consider changing your lifestyle or go to see a doctor!");
-                    } else {
-                        resultTextArea.setText("You are currently not at risk of Coronary Heart Disease.");
-                    }
+                        String classResult = hdClassfier.Classify(fieldData);
+                        if (classResult.equals("1")) {
+                            resultTextArea.setText("You are at risk of Coronary Heart Disease in the next 10 years.\n Please consider changing your lifestyle or go to see a doctor!");
+                        } else {
+                            resultTextArea.setText("You are currently not at risk of Coronary Heart Disease.");
+                        }
 
-                    validationLabel.setText("Classified successfully");
-                } catch (Exception ex) {
-                    if (ex instanceof NumberFormatException) {
-                        validationLabel.setText("All fields must be filled!");
+                        validationLabel.setText("Classified successfully");
+                    } catch (Exception ex) {
+                        if (ex instanceof NumberFormatException) {
+                            validationLabel.setText("All fields must be filled!");
+                        }
                     }
+                } else {
+                    validationDialog.setVisible(true);
                 }
             } else {
-                validationLabel.setText("You must accept terms of use!");
+                termsDialog.setVisible(true);
             }
+
         }
     }//GEN-LAST:event_submitBtnActionPerformed
 
@@ -1249,12 +1309,18 @@ public class TabbedPanel extends javax.swing.JFrame {
     private void piNextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_piNextButtonActionPerformed
         if (fieldValidator.verify(ageField) && comboValidator.verify(personalInfoComboBoxes)) {
             TabbedPane.setSelectedComponent(HearthDiseasePanel);
+        } else {
+            validationDialog.setVisible(true);
         }
     }//GEN-LAST:event_piNextButtonActionPerformed
 
     private void eduMsgLabelFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_eduMsgLabelFocusLost
         // TODO add your handling code here:
     }//GEN-LAST:event_eduMsgLabelFocusLost
+
+    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
+        validationDialog.setVisible(false);
+    }//GEN-LAST:event_okButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1333,6 +1399,7 @@ public class TabbedPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
@@ -1380,6 +1447,7 @@ public class TabbedPanel extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JButton nextButton;
+    private javax.swing.JButton okButton;
     private javax.swing.JButton piNextButton;
     private javax.swing.JButton resetBtn;
     private javax.swing.JTextArea resultTextArea;
@@ -1392,6 +1460,7 @@ public class TabbedPanel extends javax.swing.JFrame {
     private javax.swing.JTextField systolicField;
     private javax.swing.JCheckBox terms;
     private javax.swing.JDialog termsDialog;
+    private javax.swing.JDialog validationDialog;
     private javax.swing.JLabel validationLabel;
     // End of variables declaration//GEN-END:variables
 }

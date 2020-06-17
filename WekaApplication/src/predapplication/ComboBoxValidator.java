@@ -16,13 +16,15 @@ import javax.swing.JComponent;
  */
 public class ComboBoxValidator extends InputVerifier {
 
+    private static LinkedList<String> invalidInputs = new LinkedList();
+
     @Override
     public boolean verify(JComponent input) {
         try {
-             int value = ((JComboBox) input).getSelectedIndex();
-                if (value == 0) {
-                    return false;
-                }
+            int value = ((JComboBox) input).getSelectedIndex();
+            if (value == 0) {
+                return false;
+            }
         } catch (NumberFormatException e) {
             return false;
         }
@@ -31,9 +33,10 @@ public class ComboBoxValidator extends InputVerifier {
 
     public boolean verify(LinkedList<JComboBox> inputs) {
         try {
-            for (JComponent input : inputs) {
-                int value = ((JComboBox) input).getSelectedIndex();
+            for (JComboBox input : inputs) {
+                int value =  input.getSelectedIndex();
                 if (value == 0) {
+                    invalidInputs.add(input.getName());
                     return false;
                 }
             }
@@ -41,5 +44,9 @@ public class ComboBoxValidator extends InputVerifier {
             return false;
         }
         return true;
+    }
+    
+    public LinkedList<String> getInvalidInputs() {
+        return invalidInputs;
     }
 }

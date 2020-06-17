@@ -4,20 +4,21 @@
  * and open the template in the editor.
  */
 package predapplication;
-
 import weka.classifiers.bayes.NaiveBayes;
+import weka.classifiers.meta.AdaBoostM1;
+import weka.classifiers.meta.CostSensitiveClassifier;
 import weka.core.SerializationHelper;
 
 /**
  *
  * @author Rossen
  */
-public class HearthDiseaseClassifier extends Classifier {
+public class HeartDiseaseClassifier extends Classifier {
 
     private final static String classificationTask = "HearthDisease";
-    private final static String pathToClassifier = System.getProperty("user.dir") + "\\data\\classifiers\\Nb_HearthDisease.model";
+    private final static String pathToClassifier = System.getProperty("user.dir") + "\\data\\classifiers\\J48_1.model";
 
-    public HearthDiseaseClassifier() {
+    public HeartDiseaseClassifier() {
         super(classificationTask);
     }
 
@@ -28,7 +29,7 @@ public class HearthDiseaseClassifier extends Classifier {
         }
         dataToBeClassified.setDataset(dataStructure);
         try {
-                NaiveBayes cls = (NaiveBayes) SerializationHelper.read(pathToClassifier);
+                CostSensitiveClassifier cls = (CostSensitiveClassifier) SerializationHelper.read(pathToClassifier);
                 double pred = cls.classifyInstance(dataToBeClassified);
                 predValue = dataStructure.classAttribute().value((int) pred);
                 return predValue;

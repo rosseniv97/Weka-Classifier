@@ -6,7 +6,7 @@
 package predapplication;
 
 import java.util.LinkedList;
-import java.util.List;
+import java.util.regex.Pattern;
 import javax.swing.InputVerifier;
 import javax.swing.JComponent;
 import javax.swing.JTextField;
@@ -17,12 +17,17 @@ import javax.swing.JTextField;
  */
 public class TextFieldValidator extends InputVerifier {
 
+    private static LinkedList<String> invalidInputs = new LinkedList();
+    private static String regex = "[0-9]+";
     @Override
     public boolean verify(JComponent input) {
 
         try {
-            double value = Double.parseDouble(((JTextField) input).getText());
-        } catch (NumberFormatException e) {
+            boolean value = ((JTextField) input).getText().matches(regex);
+               if(!value){
+                   return false;
+               }
+        } catch (Exception e) {
             return false;
         }
         return true;
@@ -32,12 +37,22 @@ public class TextFieldValidator extends InputVerifier {
 
         try {
             for (JComponent input : inputs) {
-                double value = Double.parseDouble(((JTextField) input).getText());
+               boolean value = ((JTextField) input).getText().matches(regex);
+               if(!value){
+                   invalidInputs.add(input.getName()); 
+                   return false;
+               }
+               System.out.println(input.getName()+" "+ value);
+                // value = Double.parseDouble(((JTextField) input).getText());
             }
 
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
             return false;
         }
         return true;
+    }
+
+    public LinkedList<String> getInvalidInputs() {
+        return invalidInputs;
     }
 }

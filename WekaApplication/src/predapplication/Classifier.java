@@ -19,13 +19,7 @@ import weka.core.converters.ConverterUtils;
  * @author Rossen
  */
 public abstract class Classifier {
-   // private final static String pathToClassifier = System.getProperty("user.dir") + "\\data\\classifiers\\Nb.model";
-    private static enum algorithmNames {
-        NAIVEBAYES,
-        J48,
-        SVM,
-        BYESNET  
-    };
+    
     private String classificationTask;
     protected Instances dataStructure;
     protected Instance dataToBeClassified;
@@ -35,7 +29,7 @@ public abstract class Classifier {
     public Classifier(String classificationTask) {
         this.classificationTask = classificationTask;
         try {
-            ConverterUtils.DataSource source = new ConverterUtils.DataSource("D:\\2019_ 2020\\Weka API\\"+classificationTask+".arff");
+            ConverterUtils.DataSource source = new ConverterUtils.DataSource(System.getProperty("user.dir") + "\\data\\classifiers\\"+classificationTask+".arff");
             dataStructure = source.getDataSet();
             dataStructure.setClassIndex(dataStructure.numAttributes() - 1);
             numClasses = dataStructure.numClasses();

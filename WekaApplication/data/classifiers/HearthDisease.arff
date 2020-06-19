@@ -1,0 +1,20 @@
+@relation framingham
+
+@attribute male {0,1}
+@attribute age NUMERIC
+@attribute education NUMERIC
+@attribute currentSmoker {0,1}
+@attribute cigsPerDay NUMERIC
+@attribute BPMeds {0,1}
+@attribute prevalentStroke {0,1}
+@attribute prevalentHyp {0,1}
+@attribute diabetes {0,1}
+@attribute totChol NUMERIC
+@attribute sysBP NUMERIC
+@attribute diaBP NUMERIC
+@attribute BMI NUMERIC
+@attribute heartRate NUMERIC
+@attribute glucose NUMERIC
+@attribute class {0,1}
+
+@data

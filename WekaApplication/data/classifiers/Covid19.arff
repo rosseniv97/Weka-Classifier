@@ -1,0 +1,25 @@
+@relation 'covid19_data-weka.filters.unsupervised.attribute.Reorder-R1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21-weka.filters.supervised.attribute.NominalToBinary-weka.filters.unsupervised.attribute.NumericToBinary-R3,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20-weka.filters.unsupervised.attribute.NumericToNominal-R21-weka.filters.supervised.instance.SMOTE-C1-K5-P100.0-S1-weka.filters.supervised.instance.SMOTE-C2-K5-P100.0-S1-weka.filters.supervised.instance.SMOTE-C3-K5-P100.0-S1-weka.filters.supervised.instance.SMOTE-C3-K5-P100.0-S1-weka.filters.supervised.instance.SMOTE-C3-K5-P100.0-S1-weka.filters.unsupervised.instance.Randomize-S42-weka.filters.supervised.instance.SMOTE-C2-K5-P50.0-S1-weka.filters.supervised.instance.SMOTE-C1-K5-P50.0-S1-weka.filters.supervised.instance.SMOTE-C1-K5-P100.0-S1'
+
+@attribute age numeric
+@attribute gender_binarized {0,1}
+@attribute 'body temperature' numeric
+@attribute 'Dry Cough_binarized' {0,1}
+@attribute 'sour throat_binarized' {0,1}
+@attribute weakness_binarized {0,1}
+@attribute 'breathing problem_binarized' {0,1}
+@attribute drowsiness_binarized {0,1}
+@attribute 'pain in chest_binarized' {0,1}
+@attribute 'travel history to infected countries_binarized' {0,1}
+@attribute diabetes_binarized {0,1}
+@attribute 'heart disease_binarized' {0,1}
+@attribute 'lung disease_binarized' {0,1}
+@attribute 'stroke or reduced immunity_binarized' {0,1}
+@attribute 'symptoms progressed_binarized' {0,1}
+@attribute 'high blood pressue_binarized' {0,1}
+@attribute 'kidney disease_binarized' {0,1}
+@attribute 'change in appetide_binarized' {0,1}
+@attribute 'Loss of sense of smell_binarized' {0,1}
+@attribute 'Corona result' {0,1,2}
+
+@data
+

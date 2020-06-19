@@ -32,21 +32,34 @@ public class ComboBoxValidator extends InputVerifier {
     }
 
     public boolean verify(LinkedList<JComboBox> inputs) {
+        boolean valid = true;
         try {
             for (JComboBox input : inputs) {
-                int value =  input.getSelectedIndex();
+                int value = input.getSelectedIndex();
                 if (value == 0) {
                     invalidInputs.add(input.getName());
-                    return false;
+                    valid = false;
                 }
+            }
+            if (!valid) {
+                return false;
             }
         } catch (NumberFormatException e) {
             return false;
         }
         return true;
     }
-    
+
     public LinkedList<String> getInvalidInputs() {
         return invalidInputs;
+    }
+
+    public String getInvalidInputsMessage() {
+        StringBuilder invalidInputsString = new StringBuilder();
+        for (String input : invalidInputs) {
+            invalidInputsString.append(input + "\n");
+        }
+        invalidInputs.clear();
+        return invalidInputsString.toString();
     }
 }

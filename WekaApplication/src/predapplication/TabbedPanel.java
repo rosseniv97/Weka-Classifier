@@ -28,12 +28,14 @@ public class TabbedPanel extends javax.swing.JFrame {
     private final ComboBoxValidator comboValidator = new ComboBoxValidator();
     private final LinkedList<JComboBox> personalInfoComboBoxes = new LinkedList();
     private final LinkedList<JTextField> heartDiseaseFields = new LinkedList();
+    private final LinkedList<JComponent> covid19Inputs = new LinkedList();
     //private LinkedList<InputVerifier> validatorsList = new LinkedList<InputVerifier>();
 
     public TabbedPanel() {
         initComponents();
         personalInfoComboBoxes.add(sexCombo);
         personalInfoComboBoxes.add(educationCombo);
+
         heartDiseaseFields.add(ageField);
         heartDiseaseFields.add(bmiField);
         heartDiseaseFields.add(cholesterolField);
@@ -43,14 +45,23 @@ public class TabbedPanel extends javax.swing.JFrame {
         heartDiseaseFields.add(hearthField);
         heartDiseaseFields.add(systolicField);
 
-        /* ageField.setInputVerifier(fieldValidator);
-        cigsField.setInputVerifier(fieldValidator);
-        cholesterolField.setInputVerifier(fieldValidator);
-        systolicField.setInputVerifier(fieldValidator);
-        diastolicField.setInputVerifier(fieldValidator);
-        hearthField.setInputVerifier(fieldValidator);
-        bmiField.setInputVerifier(fieldValidator);
-        glucoseField.setInputVerifier(fieldValidator); */
+        covid19Inputs.add(immunityCheck);
+        covid19Inputs.add(kidneyCheck);
+        covid19Inputs.add(lungCheck);
+        covid19Inputs.add(temperatureField);
+        covid19Inputs.add(throatCheck);
+        covid19Inputs.add(travelCheck);
+        covid19Inputs.add(weakCheck);
+        covid19Inputs.add(lungCheck);
+        covid19Inputs.add(heartCheck);
+        covid19Inputs.add(drowsinessCheck);
+        covid19Inputs.add(diabetesCovCheck);
+        covid19Inputs.add(caughCheck);
+        covid19Inputs.add(chestCheck);
+        covid19Inputs.add(breathingCheck);
+        covid19Inputs.add(bpCheck);
+        covid19Inputs.add(symptomsCheck);
+
     }
 
     /**
@@ -68,6 +79,9 @@ public class TabbedPanel extends javax.swing.JFrame {
         validationDialog = new javax.swing.JDialog();
         jLabel19 = new javax.swing.JLabel();
         okButton = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        invalidFieldsPane = new javax.swing.JTextPane();
         TabbedPane = new javax.swing.JTabbedPane();
         Panel = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
@@ -157,82 +171,74 @@ public class TabbedPanel extends javax.swing.JFrame {
         covid4Panel = new javax.swing.JPanel();
         jPanel41 = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
-        jCheckBox15 = new javax.swing.JCheckBox();
-        jPanel42 = new javax.swing.JPanel();
-        jLabel43 = new javax.swing.JLabel();
-        jCheckBox16 = new javax.swing.JCheckBox();
-        jPanel43 = new javax.swing.JPanel();
-        jLabel44 = new javax.swing.JLabel();
-        jCheckBox17 = new javax.swing.JCheckBox();
-        jPanel44 = new javax.swing.JPanel();
-        jLabel45 = new javax.swing.JLabel();
-        jCheckBox18 = new javax.swing.JCheckBox();
-        jButton7 = new javax.swing.JButton();
+        smellCheck = new javax.swing.JCheckBox();
+        submitCovButton = new javax.swing.JButton();
         fourthToThirdButton = new javax.swing.JButton();
         jPanel47 = new javax.swing.JPanel();
         jLabel48 = new javax.swing.JLabel();
-        jCheckBox21 = new javax.swing.JCheckBox();
+        appetideCheck = new javax.swing.JCheckBox();
         jLabel49 = new javax.swing.JLabel();
+        jPanel45 = new javax.swing.JPanel();
+        jLabel46 = new javax.swing.JLabel();
+        drowsinessCheck = new javax.swing.JCheckBox();
+        jPanel31 = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
+        chestCheck = new javax.swing.JCheckBox();
         covid3Panel = new javax.swing.JPanel();
         jPanel36 = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
-        jCheckBox11 = new javax.swing.JCheckBox();
+        immunityCheck = new javax.swing.JCheckBox();
         jPanel37 = new javax.swing.JPanel();
         jLabel38 = new javax.swing.JLabel();
-        jCheckBox12 = new javax.swing.JCheckBox();
+        symptomsCheck = new javax.swing.JCheckBox();
         jPanel38 = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel();
-        jCheckBox13 = new javax.swing.JCheckBox();
+        bpCheck = new javax.swing.JCheckBox();
         jPanel39 = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
-        jCheckBox14 = new javax.swing.JCheckBox();
+        kidneyCheck = new javax.swing.JCheckBox();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jPanel46 = new javax.swing.JPanel();
         jLabel47 = new javax.swing.JLabel();
-        jCheckBox20 = new javax.swing.JCheckBox();
+        lungCheck = new javax.swing.JCheckBox();
         jLabel41 = new javax.swing.JLabel();
         covid2Panel = new javax.swing.JPanel();
-        jPanel31 = new javax.swing.JPanel();
-        jLabel32 = new javax.swing.JLabel();
-        jCheckBox7 = new javax.swing.JCheckBox();
         jPanel32 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
-        jCheckBox8 = new javax.swing.JCheckBox();
+        travelCheck = new javax.swing.JCheckBox();
         jPanel33 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
-        jCheckBox9 = new javax.swing.JCheckBox();
+        diabetesCovCheck = new javax.swing.JCheckBox();
         jPanel34 = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
-        jCheckBox10 = new javax.swing.JCheckBox();
+        heartCheck = new javax.swing.JCheckBox();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jPanel45 = new javax.swing.JPanel();
-        jLabel46 = new javax.swing.JLabel();
-        jCheckBox19 = new javax.swing.JCheckBox();
         jLabel36 = new javax.swing.JLabel();
         covid1Panel = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        temperatureField = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        caughCheck = new javax.swing.JCheckBox();
         jPanel21 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        throatCheck = new javax.swing.JCheckBox();
         jPanel25 = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
-        jCheckBox5 = new javax.swing.JCheckBox();
+        weakCheck = new javax.swing.JCheckBox();
         jPanel26 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        breathingCheck = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
-        covid5Panel = new javax.swing.JPanel();
+        resultPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        resultCovTextArea = new javax.swing.JTextArea();
         jLabel50 = new javax.swing.JLabel();
+        resultBackButton = new javax.swing.JButton();
 
         termsDialog.setSize(400,200);
         termsDialog.setLocationRelativeTo(IntroPanel);
@@ -277,9 +283,11 @@ public class TabbedPanel extends javax.swing.JFrame {
         validationDialog.setLocationRelativeTo(IntroPanel);
         validationDialog.setLocation(300,300);
         validationDialog.setVisible(false);
+        validationDialog.setMinimumSize(new java.awt.Dimension(500, 320));
+        validationDialog.setPreferredSize(new java.awt.Dimension(500, 350));
         validationDialog.setResizable(false);
 
-        jLabel19.setText("Before proceeding you must enter the required valid information");
+        jLabel19.setText("Before proceeding you must enter the required valid information.");
 
         okButton.setText("OK");
         okButton.addActionListener(new java.awt.event.ActionListener() {
@@ -288,30 +296,50 @@ public class TabbedPanel extends javax.swing.JFrame {
             }
         });
 
+        jLabel23.setText("The following fields are not valid:");
+
+        invalidFieldsPane.setEnabled(false);
+        jScrollPane4.setViewportView(invalidFieldsPane);
+
         javax.swing.GroupLayout validationDialogLayout = new javax.swing.GroupLayout(validationDialog.getContentPane());
         validationDialog.getContentPane().setLayout(validationDialogLayout);
         validationDialogLayout.setHorizontalGroup(
             validationDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(validationDialogLayout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addComponent(jLabel19)
-                .addGap(22, 22, 22))
-            .addGroup(validationDialogLayout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addComponent(okButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addGroup(validationDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel19)
+                    .addGroup(validationDialogLayout.createSequentialGroup()
+                        .addGroup(validationDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(okButton)
+                            .addComponent(jLabel23))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
         validationDialogLayout.setVerticalGroup(
             validationDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(validationDialogLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addGroup(validationDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel23)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(okButton)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(43, 43, 43))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        TabbedPane.setMaximumSize(new java.awt.Dimension(800, 800));
+        TabbedPane.setPreferredSize(new java.awt.Dimension(800, 774));
+
+        Panel.setMaximumSize(new java.awt.Dimension(700, 700));
+        Panel.setMinimumSize(new java.awt.Dimension(700, 700));
+        Panel.setName(""); // NOI18N
+        Panel.setPreferredSize(new java.awt.Dimension(700, 700));
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -341,32 +369,34 @@ public class TabbedPanel extends javax.swing.JFrame {
             .addGroup(PanelLayout.createSequentialGroup()
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelLayout.createSequentialGroup()
-                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelLayout.createSequentialGroup()
-                                .addGap(94, 94, 94)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(PanelLayout.createSequentialGroup()
-                                .addGap(188, 188, 188)
-                                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanelLayout.createSequentialGroup()
-                        .addGap(355, 355, 355)
-                        .addComponent(beginBtn)))
-                .addContainerGap(411, Short.MAX_VALUE))
+                        .addGap(94, 94, 94)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(283, 283, 283))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(76, 76, 76)))
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
+                .addComponent(beginBtn)
+                .addGap(306, 306, 306))
         );
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
-                .addGap(94, 94, 94)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(76, 76, 76)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(74, 74, 74)
                 .addComponent(beginBtn)
-                .addContainerGap(384, Short.MAX_VALUE))
+                .addGap(77, 77, 77)
+                .addComponent(jLabel1)
+                .addContainerGap(276, Short.MAX_VALUE))
         );
 
         TabbedPane.addTab("Main", Panel);
@@ -399,14 +429,14 @@ public class TabbedPanel extends javax.swing.JFrame {
         IntroPanelLayout.setHorizontalGroup(
             IntroPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IntroPanelLayout.createSequentialGroup()
-                .addGap(211, 211, 211)
+                .addGap(150, 150, 150)
                 .addGroup(IntroPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(IntroPanelLayout.createSequentialGroup()
                         .addComponent(terms)
                         .addGap(278, 278, 278)
                         .addComponent(nextButton)))
-                .addContainerGap(362, Short.MAX_VALUE))
+                .addContainerGap(719, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IntroPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -423,7 +453,7 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addGroup(IntroPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(terms)
                     .addComponent(nextButton))
-                .addContainerGap(512, Short.MAX_VALUE))
+                .addContainerGap(375, Short.MAX_VALUE))
         );
 
         TabbedPane.addTab("Introduction", IntroPanel);
@@ -469,7 +499,7 @@ public class TabbedPanel extends javax.swing.JFrame {
 
         jLabel26.setText("Age:");
 
-        ageField.setName("age field");
+        ageField.setName("Age");
         ageField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 ageFieldFocusLost(evt);
@@ -594,7 +624,7 @@ public class TabbedPanel extends javax.swing.JFrame {
         PersonalInfoLayout.setHorizontalGroup(
             PersonalInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PersonalInfoLayout.createSequentialGroup()
-                .addContainerGap(428, Short.MAX_VALUE)
+                .addGap(150, 150, 150)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(202, 202, 202))
         );
@@ -603,7 +633,7 @@ public class TabbedPanel extends javax.swing.JFrame {
             .addGroup(PersonalInfoLayout.createSequentialGroup()
                 .addGap(117, 117, 117)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(528, Short.MAX_VALUE))
+                .addContainerGap(391, Short.MAX_VALUE))
         );
 
         TabbedPane.addTab("Personal Information", PersonalInfo);
@@ -744,7 +774,7 @@ public class TabbedPanel extends javax.swing.JFrame {
 
         jLabel13.setText("Diastolic BP:");
 
-        diastolicField.setName("diastolic BP field");
+        diastolicField.setName("Diastolic BP");
         diastolicField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 diastolicFieldFocusLost(evt);
@@ -786,7 +816,7 @@ public class TabbedPanel extends javax.swing.JFrame {
 
         jLabel21.setText("Heart Rate: ");
 
-        hearthField.setName("heart rate field");
+        hearthField.setName("Heart rate");
         hearthField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 hearthFieldFocusLost(evt);
@@ -868,7 +898,8 @@ public class TabbedPanel extends javax.swing.JFrame {
 
         jLabel11.setText("Total Cholesterol:");
 
-        cholesterolField.setName("cholesterol field");
+        cholesterolField.setName("Cholesterol");
+        cholesterolField.setName(""); // NOI18N
         cholesterolField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 cholesterolFieldFocusLost(evt);
@@ -886,9 +917,7 @@ public class TabbedPanel extends javax.swing.JFrame {
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addComponent(cholMsgLabel)
-                        .addGap(0, 0, 0))
+                    .addComponent(cholMsgLabel)
                     .addGroup(jPanel20Layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addGap(128, 128, 128)
@@ -919,7 +948,7 @@ public class TabbedPanel extends javax.swing.JFrame {
         heartMsgLabel.setText("Please insert a valid number!");
         heartMsgLabel.setVisible(false);
 
-        systolicField.setName("systolic BP field");
+        systolicField.setName("Systolic BP");
         systolicField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 systolicFieldFocusLost(evt);
@@ -931,7 +960,7 @@ public class TabbedPanel extends javax.swing.JFrame {
             }
         });
 
-        glucoseField.setName("glucose field");
+        glucoseField.setName("Glucose");
         glucoseField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 glucoseFieldFocusLost(evt);
@@ -943,7 +972,7 @@ public class TabbedPanel extends javax.swing.JFrame {
             }
         });
 
-        bmiField.setName("Body Mass Index field");
+        bmiField.setName("Body Mass Index");
         bmiField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 bmiFieldFocusLost(evt);
@@ -1027,7 +1056,7 @@ public class TabbedPanel extends javax.swing.JFrame {
 
         jLabel6.setText("Cigarettes/day:");
 
-        cigsField.setName("Cigarettes/day field");
+        cigsField.setName("Cigarettes/day");
         cigsField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 cigsFieldFocusLost(evt);
@@ -1043,12 +1072,12 @@ public class TabbedPanel extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel6)
-                .addGap(65, 65, 65)
-                .addComponent(cigsField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(cigsMsgLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(65, 65, 65)
+                        .addComponent(cigsField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cigsMsgLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -1191,10 +1220,10 @@ public class TabbedPanel extends javax.swing.JFrame {
                     .addGroup(HearthDiseasePanelLayout.createSequentialGroup()
                         .addGap(101, 101, 101)
                         .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(226, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
             .addGroup(HearthDiseasePanelLayout.createSequentialGroup()
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
         );
         HearthDiseasePanelLayout.setVerticalGroup(
             HearthDiseasePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1204,26 +1233,28 @@ public class TabbedPanel extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addComponent(jLabel18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(HearthDiseasePanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 799, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, 0)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         TabbedPane.addTab("HearthDisease", HearthDiseasePanel);
 
         CovidPanel.setLayout(null);
+        CovidPanel.setFocusable(false);
+        CovidPanel.setMaximumSize(new java.awt.Dimension(700, 700));
+        CovidPanel.setPreferredSize(new java.awt.Dimension(700, 700));
 
         covid4Panel.setVisible(false);
         covid4Panel.setPreferredSize(new java.awt.Dimension(652, 323));
 
-        jLabel42.setText("jLabel20");
+        jLabel42.setText("Loss of sense of smell");
 
-        jCheckBox15.setText("jCheckBox1");
+        smellCheck.setText("(Select if symptom is present)");
 
         javax.swing.GroupLayout jPanel41Layout = new javax.swing.GroupLayout(jPanel41);
         jPanel41.setLayout(jPanel41Layout);
@@ -1232,8 +1263,8 @@ public class TabbedPanel extends javax.swing.JFrame {
             .addGroup(jPanel41Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel42)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addComponent(smellCheck)
                 .addGap(36, 36, 36))
         );
         jPanel41Layout.setVerticalGroup(
@@ -1242,86 +1273,16 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel42)
-                    .addComponent(jCheckBox15))
+                    .addComponent(smellCheck))
                 .addContainerGap())
         );
 
-        jLabel43.setText("jLabel20");
-
-        jCheckBox16.setText("jCheckBox1");
-
-        javax.swing.GroupLayout jPanel42Layout = new javax.swing.GroupLayout(jPanel42);
-        jPanel42.setLayout(jPanel42Layout);
-        jPanel42Layout.setHorizontalGroup(
-            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel42Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel43)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox16)
-                .addGap(35, 35, 35))
-        );
-        jPanel42Layout.setVerticalGroup(
-            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel42Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel43)
-                    .addComponent(jCheckBox16))
-                .addContainerGap())
-        );
-
-        jLabel44.setText("jLabel20");
-
-        jCheckBox17.setText("jCheckBox1");
-
-        javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
-        jPanel43.setLayout(jPanel43Layout);
-        jPanel43Layout.setHorizontalGroup(
-            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel43Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel44)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox17)
-                .addGap(36, 36, 36))
-        );
-        jPanel43Layout.setVerticalGroup(
-            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel43Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel44)
-                    .addComponent(jCheckBox17))
-                .addContainerGap())
-        );
-
-        jLabel45.setText("jLabel20");
-
-        jCheckBox18.setText("jCheckBox1");
-
-        javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
-        jPanel44.setLayout(jPanel44Layout);
-        jPanel44Layout.setHorizontalGroup(
-            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel44Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel45)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox18)
-                .addGap(36, 36, 36))
-        );
-        jPanel44Layout.setVerticalGroup(
-            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel44Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel45)
-                    .addComponent(jCheckBox18))
-                .addContainerGap())
-        );
-
-        jButton7.setText("Submit");
+        submitCovButton.setText("Submit");
+        submitCovButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitCovButtonActionPerformed(evt);
+            }
+        });
 
         fourthToThirdButton.setText("Back");
         fourthToThirdButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1330,9 +1291,9 @@ public class TabbedPanel extends javax.swing.JFrame {
             }
         });
 
-        jLabel48.setText("jLabel20");
+        jLabel48.setText("Change in Appetide");
 
-        jCheckBox21.setText("jCheckBox1");
+        appetideCheck.setText("(Select if symptom is present)");
 
         javax.swing.GroupLayout jPanel47Layout = new javax.swing.GroupLayout(jPanel47);
         jPanel47.setLayout(jPanel47Layout);
@@ -1341,8 +1302,8 @@ public class TabbedPanel extends javax.swing.JFrame {
             .addGroup(jPanel47Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel48)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
-                .addComponent(jCheckBox21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(appetideCheck)
                 .addGap(36, 36, 36))
         );
         jPanel47Layout.setVerticalGroup(
@@ -1351,36 +1312,84 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel48)
-                    .addComponent(jCheckBox21))
+                    .addComponent(appetideCheck))
                 .addContainerGap())
         );
 
         jLabel49.setText("Step 4");
+
+        jLabel46.setText("Drowsiness");
+
+        drowsinessCheck.setText("(Select if symptom is present)");
+
+        javax.swing.GroupLayout jPanel45Layout = new javax.swing.GroupLayout(jPanel45);
+        jPanel45.setLayout(jPanel45Layout);
+        jPanel45Layout.setHorizontalGroup(
+            jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel45Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(drowsinessCheck)
+                .addGap(34, 34, 34))
+        );
+        jPanel45Layout.setVerticalGroup(
+            jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel45Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel46)
+                    .addComponent(drowsinessCheck))
+                .addContainerGap())
+        );
+
+        jLabel32.setText("Pain in the Chest");
+
+        chestCheck.setText("(Select if symptom is present)");
+
+        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
+        jPanel31.setLayout(jPanel31Layout);
+        jPanel31Layout.setHorizontalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel31Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(chestCheck)
+                .addGap(36, 36, 36))
+        );
+        jPanel31Layout.setVerticalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel31Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(chestCheck))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout covid4PanelLayout = new javax.swing.GroupLayout(covid4Panel);
         covid4Panel.setLayout(covid4PanelLayout);
         covid4PanelLayout.setHorizontalGroup(
             covid4PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(covid4PanelLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(fourthToThirdButton)
-                .addGap(350, 350, 350)
-                .addComponent(jButton7)
-                .addGap(103, 103, 103))
-            .addGroup(covid4PanelLayout.createSequentialGroup()
                 .addGroup(covid4PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(covid4PanelLayout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addGroup(covid4PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel47, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel43, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(covid4PanelLayout.createSequentialGroup()
                         .addGap(270, 270, 270)
-                        .addComponent(jLabel49)))
-                .addGap(170, 170, 170))
+                        .addComponent(jLabel49))
+                    .addGroup(covid4PanelLayout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addGroup(covid4PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(covid4PanelLayout.createSequentialGroup()
+                                .addComponent(fourthToThirdButton)
+                                .addGap(266, 266, 266)
+                                .addComponent(submitCovButton))
+                            .addGroup(covid4PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jPanel47, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addGap(150, 150, 150))
         );
         covid4PanelLayout.setVerticalGroup(
             covid4PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1392,24 +1401,22 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(covid4PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fourthToThirdButton)
-                    .addComponent(jButton7))
+                    .addComponent(submitCovButton))
                 .addContainerGap())
         );
 
         covid3Panel.setVisible(false);
         covid3Panel.setPreferredSize(new java.awt.Dimension(652, 323));
 
-        jLabel37.setText("jLabel20");
+        jLabel37.setText("Stroke or Reduced Immunity");
 
-        jCheckBox11.setText("jCheckBox1");
+        immunityCheck.setText("(Select if true)");
 
         javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
         jPanel36.setLayout(jPanel36Layout);
@@ -1419,7 +1426,7 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel37)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox11)
+                .addComponent(immunityCheck)
                 .addGap(36, 36, 36))
         );
         jPanel36Layout.setVerticalGroup(
@@ -1428,13 +1435,13 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37)
-                    .addComponent(jCheckBox11))
+                    .addComponent(immunityCheck))
                 .addContainerGap())
         );
 
-        jLabel38.setText("jLabel20");
+        jLabel38.setText("Symptoms Progressed");
 
-        jCheckBox12.setText("jCheckBox1");
+        symptomsCheck.setText("(Select if true)");
 
         javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
         jPanel37.setLayout(jPanel37Layout);
@@ -1443,8 +1450,8 @@ public class TabbedPanel extends javax.swing.JFrame {
             .addGroup(jPanel37Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel38)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
-                .addComponent(jCheckBox12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(symptomsCheck)
                 .addGap(37, 37, 37))
         );
         jPanel37Layout.setVerticalGroup(
@@ -1453,13 +1460,13 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38)
-                    .addComponent(jCheckBox12))
+                    .addComponent(symptomsCheck))
                 .addContainerGap())
         );
 
-        jLabel39.setText("jLabel20");
+        jLabel39.setText("High Blood Pressure");
 
-        jCheckBox13.setText("jCheckBox1");
+        bpCheck.setText("(Select if true)");
 
         javax.swing.GroupLayout jPanel38Layout = new javax.swing.GroupLayout(jPanel38);
         jPanel38.setLayout(jPanel38Layout);
@@ -1469,7 +1476,7 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel39)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox13)
+                .addComponent(bpCheck)
                 .addGap(36, 36, 36))
         );
         jPanel38Layout.setVerticalGroup(
@@ -1478,13 +1485,13 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel39)
-                    .addComponent(jCheckBox13))
+                    .addComponent(bpCheck))
                 .addContainerGap())
         );
 
-        jLabel40.setText("jLabel20");
+        jLabel40.setText("Kidney Disease");
 
-        jCheckBox14.setText("jCheckBox1");
+        kidneyCheck.setText("(Select if true)");
 
         javax.swing.GroupLayout jPanel39Layout = new javax.swing.GroupLayout(jPanel39);
         jPanel39.setLayout(jPanel39Layout);
@@ -1494,7 +1501,7 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel40)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox14)
+                .addComponent(kidneyCheck)
                 .addGap(36, 36, 36))
         );
         jPanel39Layout.setVerticalGroup(
@@ -1503,7 +1510,7 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel40)
-                    .addComponent(jCheckBox14))
+                    .addComponent(kidneyCheck))
                 .addContainerGap())
         );
 
@@ -1521,9 +1528,9 @@ public class TabbedPanel extends javax.swing.JFrame {
             }
         });
 
-        jLabel47.setText("jLabel20");
+        jLabel47.setText("Lung Disease");
 
-        jCheckBox20.setText("jCheckBox1");
+        lungCheck.setText("(Select if true)");
 
         javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
         jPanel46.setLayout(jPanel46Layout);
@@ -1533,7 +1540,7 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel47)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox20)
+                .addComponent(lungCheck)
                 .addGap(36, 36, 36))
         );
         jPanel46Layout.setVerticalGroup(
@@ -1542,7 +1549,7 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel47)
-                    .addComponent(jCheckBox20))
+                    .addComponent(lungCheck))
                 .addContainerGap())
         );
 
@@ -1553,32 +1560,30 @@ public class TabbedPanel extends javax.swing.JFrame {
         covid3PanelLayout.setHorizontalGroup(
             covid3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(covid3PanelLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jButton6)
-                .addGap(350, 350, 350)
-                .addComponent(jButton5)
-                .addGap(114, 114, 114))
-            .addGroup(covid3PanelLayout.createSequentialGroup()
                 .addGroup(covid3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(covid3PanelLayout.createSequentialGroup()
-                        .addGap(130, 130, 130)
+                        .addGap(270, 270, 270)
+                        .addComponent(jLabel41))
+                    .addGroup(covid3PanelLayout.createSequentialGroup()
+                        .addGap(150, 150, 150)
                         .addGroup(covid3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(covid3PanelLayout.createSequentialGroup()
+                                .addComponent(jButton6)
+                                .addGap(250, 250, 250)
+                                .addComponent(jButton5))
                             .addComponent(jPanel46, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(covid3PanelLayout.createSequentialGroup()
-                        .addGap(270, 270, 270)
-                        .addComponent(jLabel41)))
-                .addGap(170, 170, 170))
+                            .addComponent(jPanel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(150, 150, 150))
         );
         covid3PanelLayout.setVerticalGroup(
             covid3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(covid3PanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel41)
-                .addGap(51, 51, 51)
+                .addGap(34, 34, 34)
                 .addComponent(jPanel46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1588,7 +1593,7 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addComponent(jPanel38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(covid3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6)
                     .addComponent(jButton5))
@@ -1598,34 +1603,9 @@ public class TabbedPanel extends javax.swing.JFrame {
         covid2Panel.setVisible(false);
         covid2Panel.setPreferredSize(new java.awt.Dimension(652, 323));
 
-        jLabel32.setText("jLabel20");
+        jLabel33.setText("Travelling to Infected Countries");
 
-        jCheckBox7.setText("jCheckBox1");
-
-        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
-        jPanel31.setLayout(jPanel31Layout);
-        jPanel31Layout.setHorizontalGroup(
-            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel31Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel32)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox7)
-                .addGap(36, 36, 36))
-        );
-        jPanel31Layout.setVerticalGroup(
-            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel31Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel32)
-                    .addComponent(jCheckBox7))
-                .addContainerGap())
-        );
-
-        jLabel33.setText("jLabel20");
-
-        jCheckBox8.setText("jCheckBox1");
+        travelCheck.setText("(Select if true)");
 
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
@@ -1635,7 +1615,7 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel33)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox8)
+                .addComponent(travelCheck)
                 .addGap(36, 36, 36))
         );
         jPanel32Layout.setVerticalGroup(
@@ -1644,13 +1624,13 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33)
-                    .addComponent(jCheckBox8))
+                    .addComponent(travelCheck))
                 .addContainerGap())
         );
 
-        jLabel34.setText("jLabel20");
+        jLabel34.setText("Diabetes");
 
-        jCheckBox9.setText("jCheckBox1");
+        diabetesCovCheck.setText("(Select if true)");
 
         javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
         jPanel33.setLayout(jPanel33Layout);
@@ -1660,7 +1640,7 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel34)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox9)
+                .addComponent(diabetesCovCheck)
                 .addGap(36, 36, 36))
         );
         jPanel33Layout.setVerticalGroup(
@@ -1669,13 +1649,13 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34)
-                    .addComponent(jCheckBox9))
+                    .addComponent(diabetesCovCheck))
                 .addContainerGap())
         );
 
-        jLabel35.setText("jLabel20");
+        jLabel35.setText("Heart Disease");
 
-        jCheckBox10.setText("jCheckBox1");
+        heartCheck.setText("(Select if true)");
 
         javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
         jPanel34.setLayout(jPanel34Layout);
@@ -1684,8 +1664,8 @@ public class TabbedPanel extends javax.swing.JFrame {
             .addGroup(jPanel34Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel35)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
-                .addComponent(jCheckBox10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(heartCheck)
                 .addGap(36, 36, 36))
         );
         jPanel34Layout.setVerticalGroup(
@@ -1694,7 +1674,7 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35)
-                    .addComponent(jCheckBox10))
+                    .addComponent(heartCheck))
                 .addContainerGap())
         );
 
@@ -1712,31 +1692,6 @@ public class TabbedPanel extends javax.swing.JFrame {
             }
         });
 
-        jLabel46.setText("jLabel20");
-
-        jCheckBox19.setText("jCheckBox1");
-
-        javax.swing.GroupLayout jPanel45Layout = new javax.swing.GroupLayout(jPanel45);
-        jPanel45.setLayout(jPanel45Layout);
-        jPanel45Layout.setHorizontalGroup(
-            jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel45Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel46)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox19)
-                .addGap(36, 36, 36))
-        );
-        jPanel45Layout.setVerticalGroup(
-            jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel45Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel46)
-                    .addComponent(jCheckBox19))
-                .addContainerGap())
-        );
-
         jLabel36.setText("step 2");
 
         javax.swing.GroupLayout covid2PanelLayout = new javax.swing.GroupLayout(covid2Panel);
@@ -1744,42 +1699,34 @@ public class TabbedPanel extends javax.swing.JFrame {
         covid2PanelLayout.setHorizontalGroup(
             covid2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(covid2PanelLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jButton4)
-                .addGap(350, 350, 350)
-                .addComponent(jButton3)
-                .addGap(103, 103, 103))
-            .addGroup(covid2PanelLayout.createSequentialGroup()
                 .addGroup(covid2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(covid2PanelLayout.createSequentialGroup()
-                        .addGap(130, 130, 130)
+                        .addGap(270, 270, 270)
+                        .addComponent(jLabel36))
+                    .addGroup(covid2PanelLayout.createSequentialGroup()
+                        .addGap(150, 150, 150)
                         .addGroup(covid2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(covid2PanelLayout.createSequentialGroup()
-                        .addGap(270, 270, 270)
-                        .addComponent(jLabel36)))
-                .addGap(170, 170, 170))
+                            .addGroup(covid2PanelLayout.createSequentialGroup()
+                                .addComponent(jButton4)
+                                .addGap(250, 250, 250)
+                                .addComponent(jButton3)))))
+                .addGap(150, 150, 150))
         );
         covid2PanelLayout.setVerticalGroup(
             covid2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(covid2PanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel36)
-                .addGap(51, 51, 51)
-                .addComponent(jPanel45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(66, 66, 66)
                 .addComponent(jPanel32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                 .addGroup(covid2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
                     .addComponent(jButton3))
@@ -1787,10 +1734,11 @@ public class TabbedPanel extends javax.swing.JFrame {
         );
 
         covid1Panel.setLocation(200,200);
+        covid1Panel.setPreferredSize(new java.awt.Dimension(652, 323));
 
-        jLabel14.setText("jLabel14");
+        jLabel14.setText("Body Temperature (Celsius)");
 
-        jTextField1.setText("jTextField1");
+        temperatureField.setName("temperature"); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -1799,9 +1747,9 @@ public class TabbedPanel extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel14)
-                .addGap(185, 185, 185)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58))
+                .addGap(77, 77, 77)
+                .addComponent(temperatureField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1809,13 +1757,13 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(temperatureField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        jLabel20.setText("jLabel20");
+        jLabel20.setText("Dry Caugh");
 
-        jCheckBox1.setText("jCheckBox1");
+        caughCheck.setText("(Select if symptom is present)");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -1824,9 +1772,9 @@ public class TabbedPanel extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel20)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox1)
-                .addGap(36, 36, 36))
+                .addGap(144, 144, 144)
+                .addComponent(caughCheck)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1834,13 +1782,13 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
-                    .addComponent(jCheckBox1))
+                    .addComponent(caughCheck))
                 .addContainerGap())
         );
 
-        jLabel22.setText("jLabel20");
+        jLabel22.setText("Sour Throat");
 
-        jCheckBox2.setText("jCheckBox1");
+        throatCheck.setText("(Select if symptom is present)");
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -1849,8 +1797,8 @@ public class TabbedPanel extends javax.swing.JFrame {
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel22)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
-                .addComponent(jCheckBox2)
+                .addGap(136, 136, 136)
+                .addComponent(throatCheck)
                 .addContainerGap())
         );
         jPanel21Layout.setVerticalGroup(
@@ -1859,13 +1807,13 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
-                    .addComponent(jCheckBox2))
+                    .addComponent(throatCheck))
                 .addContainerGap())
         );
 
-        jLabel29.setText("jLabel20");
+        jLabel29.setText("Weakness");
 
-        jCheckBox5.setText("jCheckBox1");
+        weakCheck.setText("(Select if symptom is present)");
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
@@ -1874,9 +1822,9 @@ public class TabbedPanel extends javax.swing.JFrame {
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel29)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox5)
-                .addGap(36, 36, 36))
+                .addGap(144, 144, 144)
+                .addComponent(weakCheck)
+                .addContainerGap())
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1884,13 +1832,13 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
-                    .addComponent(jCheckBox5))
+                    .addComponent(weakCheck))
                 .addContainerGap())
         );
 
-        jLabel30.setText("jLabel20");
+        jLabel30.setText("Breathing Problem");
 
-        jCheckBox6.setText("jCheckBox1");
+        breathingCheck.setText("(Select if symptom is present)");
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -1899,9 +1847,9 @@ public class TabbedPanel extends javax.swing.JFrame {
             .addGroup(jPanel26Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel30)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox6)
-                .addGap(36, 36, 36))
+                .addGap(104, 104, 104)
+                .addComponent(breathingCheck)
+                .addGap(0, 0, 0))
         );
         jPanel26Layout.setVerticalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1909,7 +1857,7 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30)
-                    .addComponent(jCheckBox6))
+                    .addComponent(breathingCheck))
                 .addContainerGap())
         );
 
@@ -1927,30 +1875,28 @@ public class TabbedPanel extends javax.swing.JFrame {
         covid1PanelLayout.setHorizontalGroup(
             covid1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(covid1PanelLayout.createSequentialGroup()
-                .addGap(494, 494, 494)
-                .addComponent(jButton1)
-                .addGap(103, 103, 103))
-            .addGroup(covid1PanelLayout.createSequentialGroup()
                 .addGroup(covid1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(covid1PanelLayout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addGroup(covid1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(covid1PanelLayout.createSequentialGroup()
                         .addGap(270, 270, 270)
-                        .addComponent(jLabel31)))
-                .addGap(170, 170, 170))
+                        .addComponent(jLabel31))
+                    .addGroup(covid1PanelLayout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addGroup(covid1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton1)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, covid1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jPanel21, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jPanel25, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jPanel26, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         covid1PanelLayout.setVerticalGroup(
             covid1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(covid1PanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel31)
-                .addGap(51, 51, 51)
+                .addGap(37, 37, 37)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1960,56 +1906,70 @@ public class TabbedPanel extends javax.swing.JFrame {
                 .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 20, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap())
+                .addGap(11, 11, 11))
         );
 
-        covid5Panel.setPreferredSize(new java.awt.Dimension(652, 323));
+        resultPanel.setVisible(false);
+        resultPanel.setPreferredSize(new java.awt.Dimension(652, 323));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        resultCovTextArea.setColumns(20);
+        resultCovTextArea.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        resultCovTextArea.setRows(5);
+        jScrollPane1.setViewportView(resultCovTextArea);
 
         jLabel50.setText("Result");
 
-        javax.swing.GroupLayout covid5PanelLayout = new javax.swing.GroupLayout(covid5Panel);
-        covid5Panel.setLayout(covid5PanelLayout);
-        covid5PanelLayout.setHorizontalGroup(
-            covid5PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(covid5PanelLayout.createSequentialGroup()
-                .addContainerGap(144, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(130, 130, 130))
-            .addGroup(covid5PanelLayout.createSequentialGroup()
-                .addGap(293, 293, 293)
-                .addComponent(jLabel50)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        resultBackButton.setText("Back");
+        resultBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resultBackButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout resultPanelLayout = new javax.swing.GroupLayout(resultPanel);
+        resultPanel.setLayout(resultPanelLayout);
+        resultPanelLayout.setHorizontalGroup(
+            resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(resultPanelLayout.createSequentialGroup()
+                .addGroup(resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(resultPanelLayout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(jLabel50))
+                    .addGroup(resultPanelLayout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addGroup(resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(resultBackButton)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(150, 150, 150))
         );
-        covid5PanelLayout.setVerticalGroup(
-            covid5PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, covid5PanelLayout.createSequentialGroup()
-                .addContainerGap(57, Short.MAX_VALUE)
+        resultPanelLayout.setVerticalGroup(
+            resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, resultPanelLayout.createSequentialGroup()
+                .addContainerGap(45, Short.MAX_VALUE)
                 .addComponent(jLabel50)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(resultBackButton)
+                .addGap(11, 11, 11))
         );
 
         jLayeredPane1.setLayer(covid4Panel, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(covid3Panel, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(covid2Panel, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(covid1Panel, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(covid5Panel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(resultPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
         jLayeredPane1Layout.setHorizontalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                .addContainerGap(313, Short.MAX_VALUE)
-                .addComponent(covid5Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(175, 175, 175))
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(resultPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(478, Short.MAX_VALUE))
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -2034,9 +1994,8 @@ public class TabbedPanel extends javax.swing.JFrame {
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(covid5Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addComponent(resultPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 235, Short.MAX_VALUE))
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -2064,7 +2023,7 @@ public class TabbedPanel extends javax.swing.JFrame {
         CovidPanelLayout.setHorizontalGroup(
             CovidPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CovidPanelLayout.createSequentialGroup()
-                .addContainerGap(182, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(149, 149, 149))
         );
@@ -2073,7 +2032,7 @@ public class TabbedPanel extends javax.swing.JFrame {
             .addGroup(CovidPanelLayout.createSequentialGroup()
                 .addGap(188, 188, 188)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(350, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
         );
 
         TabbedPane.addTab("COVID 19", CovidPanel);
@@ -2082,11 +2041,11 @@ public class TabbedPanel extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TabbedPane, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(TabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TabbedPane)
+            .addComponent(TabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -2117,10 +2076,8 @@ public class TabbedPanel extends javax.swing.JFrame {
     }//GEN-LAST:event_diabetesCheckActionPerformed
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
-        JComponent[] fieldsArr = {sexCombo, ageField, smokeCheck, cigsField, bpmedsCheck, strokeCheck, hypCheck, diabetesCheck, cholesterolField, systolicField, diastolicField, hearthField, bmiField, glucoseField};
         resultTextArea.setText("");
         if (evt.getSource() == submitBtn) {
-
             if (terms.isSelected()) {
                 if (fieldValidator.verify(heartDiseaseFields) && comboValidator.verify(personalInfoComboBoxes)) {
                     HeartDiseaseClassifier hdClassfier = new HeartDiseaseClassifier();
@@ -2141,14 +2098,13 @@ public class TabbedPanel extends javax.swing.JFrame {
                         fieldData[12] = Double.parseDouble(bmiField.getText());
                         fieldData[13] = Double.parseDouble(hearthField.getText());
                         fieldData[14] = Double.parseDouble(glucoseField.getText());
-
                         String classResult = hdClassfier.Classify(fieldData);
                         if (classResult.equals("1")) {
-                            resultTextArea.setText("You are at risk of Coronary Heart Disease\n in the next 10 years. Please consider changing\n your lifestyle or go see a doctor!");
+                            resultTextArea.setText("You are at risk of Coronary Heart Disease\n in the next 10 years. Please consider changing\n "
+                                    + "your lifestyle or go see a doctor!");
                         } else {
                             resultTextArea.setText("You are currently not at risk of \n Coronary Heart Disease.");
                         }
-
                         validationLabel.setText("Classified successfully");
                     } catch (Exception ex) {
                         if (ex instanceof NumberFormatException) {
@@ -2156,6 +2112,8 @@ public class TabbedPanel extends javax.swing.JFrame {
                         }
                     }
                 } else {
+                    String message = fieldValidator.getInvalidInputsMessage() + comboValidator.getInvalidInputsMessage();
+                    invalidFieldsPane.setText(message);
                     validationDialog.setVisible(true);
                 }
             } else {
@@ -2270,9 +2228,11 @@ public class TabbedPanel extends javax.swing.JFrame {
         }    }//GEN-LAST:event_educationComboFocusLost
 
     private void piNextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_piNextButtonActionPerformed
-        if (fieldValidator.verify(ageField) && comboValidator.verify(personalInfoComboBoxes)) {
+        if (comboValidator.verify(personalInfoComboBoxes) && fieldValidator.verify(ageField)) {
             TabbedPane.setSelectedComponent(HearthDiseasePanel);
         } else {
+            String message = fieldValidator.getInvalidInputsMessage() + comboValidator.getInvalidInputsMessage();
+            invalidFieldsPane.setText(message);
             validationDialog.setVisible(true);
         }
     }//GEN-LAST:event_piNextButtonActionPerformed
@@ -2297,25 +2257,40 @@ public class TabbedPanel extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cholesterolFieldFocusLost
 
+    private void resultBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultBackButtonActionPerformed
+        resultCovTextArea.setText("");
+        resultPanel.setVisible(false);
+        covid4Panel.setVisible(true);
+    }//GEN-LAST:event_resultBackButtonActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         covid1Panel.setVisible(false);
-        covid2Panel.setLocation(200,200);
+        covid2Panel.setLocation(200, 200);
         covid2Panel.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        covid2Panel.setVisible(false);
+        covid1Panel.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         covid2Panel.setVisible(false);
-        covid3Panel.setLocation(200,200);
+        covid3Panel.setLocation(200, 200);
         covid3Panel.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        covid3Panel.setVisible(false);
+        covid2Panel.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         covid3Panel.setVisible(false);
-        
-        covid4Panel.setLocation(500,500);
+
+        covid4Panel.setLocation(500, 500);
         System.out.println(covid4Panel.getLocation());
         covid4Panel.setVisible(true);
-        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void fourthToThirdButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fourthToThirdButtonActionPerformed
@@ -2323,15 +2298,60 @@ public class TabbedPanel extends javax.swing.JFrame {
         covid3Panel.setVisible(true);
     }//GEN-LAST:event_fourthToThirdButtonActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        covid3Panel.setVisible(false);
-        covid2Panel.setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void submitCovButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitCovButtonActionPerformed
+        if (evt.getSource() == submitCovButton) {
+            covid4Panel.setVisible(false);
+            resultPanel.setVisible(true);
+            if (terms.isSelected()) {
+                if (fieldValidator.verify(temperatureField)) {
+                    Covid19Classifier covid19Classifier = new Covid19Classifier();
+                    double[] data = new double[19];
+                    double temperatureFahrenheit = 1.8 * (Double.parseDouble(temperatureField.getText()) + 40) - 40;
+                    try {
+                        data[0] = Double.parseDouble(ageField.getText());
+                        data[1] = sexCombo.getSelectedIndex() == 1 ? 0 : 1;
+                        data[2] = temperatureFahrenheit;
+                        data[3] = caughCheck.isSelected() ? 1 : 0;
+                        data[4] = throatCheck.isSelected() ? 1 : 0;
+                        data[5] = weakCheck.isSelected() ? 1 : 0;
+                        data[6] = breathingCheck.isSelected() ? 1 : 0;
+                        data[7] = drowsinessCheck.isSelected() ? 1 : 0;
+                        data[8] = chestCheck.isSelected() ? 1 : 0;
+                        data[9] = travelCheck.isSelected() ? 1 : 0;
+                        data[10] = diabetesCovCheck.isSelected() ? 1 : 0;;
+                        data[11] = heartCheck.isSelected() ? 1 : 0;
+                        data[12] = lungCheck.isSelected() ? 1 : 0;
+                        data[13] = immunityCheck.isSelected() ? 1 : 0;
+                        data[14] = symptomsCheck.isSelected() ? 1 : 0;
+                        data[15] = bpCheck.isSelected() ? 1 : 0;
+                        data[16] = kidneyCheck.isSelected() ? 1 : 0;
+                        data[17] = appetideCheck.isSelected() ? 1 : 0;
+                        data[18] = smellCheck.isSelected() ? 1 : 0;
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        covid2Panel.setVisible(false);
-        covid1Panel.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+                        String classResult = covid19Classifier.Classify(data);
+                        if (classResult.equals("0")) {
+                            resultCovTextArea.setText("You are most likely not infected with Covid-19. \n However, keep distance from people that may have\n"
+                                    + "symptoms and wear a mask when entering closed spaces.\n Take care! ");
+                        } else if (classResult.equals("1")) {
+                            resultCovTextArea.setText("You might have been infected with Covid-19! \n Please contact your doctor and try to \n"
+                                    + "isolate yourself from other people as much as you can.\n");
+                        } else if (classResult.equals("2")) {
+                            resultCovTextArea.setText("Call the emergency number! \n Your condition seems to be serious. \n"
+                                    + "However, don't panic and stay calm.\n");
+                        }
+                    } catch (Exception ex) {
+
+                    }
+                } else {
+                    String message = fieldValidator.getInvalidInputsMessage();
+                    invalidFieldsPane.setText(message);
+                    validationDialog.setVisible(true);
+                }
+            } else {
+                termsDialog.setVisible(true);
+            }
+        }
+    }//GEN-LAST:event_submitCovButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2378,10 +2398,15 @@ public class TabbedPanel extends javax.swing.JFrame {
     private javax.swing.JTabbedPane TabbedPane;
     private javax.swing.JTextField ageField;
     private javax.swing.JLabel ageMsgLabel;
+    private javax.swing.JCheckBox appetideCheck;
     private javax.swing.JButton beginBtn;
     private javax.swing.JTextField bmiField;
     private javax.swing.JLabel bmiMsgLabel;
+    private javax.swing.JCheckBox bpCheck;
     private javax.swing.JCheckBox bpmedsCheck;
+    private javax.swing.JCheckBox breathingCheck;
+    private javax.swing.JCheckBox caughCheck;
+    private javax.swing.JCheckBox chestCheck;
     private javax.swing.JLabel cholMsgLabel;
     private javax.swing.JTextField cholesterolField;
     private javax.swing.JTextField cigsField;
@@ -2391,45 +2416,27 @@ public class TabbedPanel extends javax.swing.JFrame {
     private javax.swing.JPanel covid2Panel;
     private javax.swing.JPanel covid3Panel;
     private javax.swing.JPanel covid4Panel;
-    private javax.swing.JPanel covid5Panel;
     private javax.swing.JLabel diaMsgLabel;
     private javax.swing.JCheckBox diabetesCheck;
+    private javax.swing.JCheckBox diabetesCovCheck;
     private javax.swing.JTextField diastolicField;
+    private javax.swing.JCheckBox drowsinessCheck;
     private javax.swing.JLabel eduMsgLabel;
     private javax.swing.JComboBox<String> educationCombo;
     private javax.swing.JButton fourthToThirdButton;
     private javax.swing.JLabel glucMsgLabel;
     private javax.swing.JTextField glucoseField;
+    private javax.swing.JCheckBox heartCheck;
     private javax.swing.JLabel heartMsgLabel;
     private javax.swing.JTextField hearthField;
     private javax.swing.JCheckBox hypCheck;
+    private javax.swing.JCheckBox immunityCheck;
+    private javax.swing.JTextPane invalidFieldsPane;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
-    private javax.swing.JCheckBox jCheckBox13;
-    private javax.swing.JCheckBox jCheckBox14;
-    private javax.swing.JCheckBox jCheckBox15;
-    private javax.swing.JCheckBox jCheckBox16;
-    private javax.swing.JCheckBox jCheckBox17;
-    private javax.swing.JCheckBox jCheckBox18;
-    private javax.swing.JCheckBox jCheckBox19;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox20;
-    private javax.swing.JCheckBox jCheckBox21;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2446,7 +2453,6 @@ public class TabbedPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -2467,9 +2473,6 @@ public class TabbedPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
@@ -2495,8 +2498,6 @@ public class TabbedPanel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel27;
@@ -2513,9 +2514,6 @@ public class TabbedPanel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel39;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel41;
-    private javax.swing.JPanel jPanel42;
-    private javax.swing.JPanel jPanel43;
-    private javax.swing.JPanel jPanel44;
     private javax.swing.JPanel jPanel45;
     private javax.swing.JPanel jPanel46;
     private javax.swing.JPanel jPanel47;
@@ -2527,24 +2525,35 @@ public class TabbedPanel extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JCheckBox kidneyCheck;
+    private javax.swing.JCheckBox lungCheck;
     private javax.swing.JButton nextButton;
     private javax.swing.JButton okButton;
     private javax.swing.JButton piNextButton;
     private javax.swing.JButton resetBtn;
+    private javax.swing.JButton resultBackButton;
+    private javax.swing.JTextArea resultCovTextArea;
+    private javax.swing.JPanel resultPanel;
     private javax.swing.JTextArea resultTextArea;
     private javax.swing.JComboBox<String> sexCombo;
     private javax.swing.JLabel sexMsgLabel;
+    private javax.swing.JCheckBox smellCheck;
     private javax.swing.JCheckBox smokeCheck;
     private javax.swing.JCheckBox strokeCheck;
     private javax.swing.JButton submitBtn;
+    private javax.swing.JButton submitCovButton;
+    private javax.swing.JCheckBox symptomsCheck;
     private javax.swing.JLabel sysMsgLabel;
     private javax.swing.JTextField systolicField;
+    private javax.swing.JTextField temperatureField;
     private javax.swing.JCheckBox terms;
     private javax.swing.JDialog termsDialog;
+    private javax.swing.JCheckBox throatCheck;
+    private javax.swing.JCheckBox travelCheck;
     private javax.swing.JDialog validationDialog;
     private javax.swing.JLabel validationLabel;
+    private javax.swing.JCheckBox weakCheck;
     // End of variables declaration//GEN-END:variables
 }

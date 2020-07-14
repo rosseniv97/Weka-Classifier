@@ -23,6 +23,9 @@ public class ComboBoxValidator extends InputVerifier {
         try {
             int value = ((JComboBox) input).getSelectedIndex();
             if (value == 0) {
+                if (invalidInputs.indexOf(input.getName()) == -1) {
+                    invalidInputs.add(input.getName());  
+                }
                 return false;
             }
         } catch (NumberFormatException e) {
@@ -37,7 +40,9 @@ public class ComboBoxValidator extends InputVerifier {
             for (JComboBox input : inputs) {
                 int value = input.getSelectedIndex();
                 if (value == 0) {
-                    invalidInputs.add(input.getName());
+                    if (invalidInputs.indexOf(input.getName()) == -1) {
+                        invalidInputs.add(input.getName());
+                    }
                     valid = false;
                 }
             }

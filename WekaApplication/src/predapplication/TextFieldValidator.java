@@ -24,8 +24,10 @@ public class TextFieldValidator extends InputVerifier {
         try {
             boolean value = ((JTextField) input).getText().matches(REGEX);
             if (!value) {
-                invalidInputs.add(input.getName());
-                return false;
+                if (invalidInputs.indexOf(input.getName()) == -1) {
+                    invalidInputs.add(input.getName());
+                }
+                 return false;
             }
         } catch (Exception e) {
             return false;
@@ -39,7 +41,9 @@ public class TextFieldValidator extends InputVerifier {
             for (JComponent input : inputs) {
                 boolean value = ((JTextField) input).getText().matches(REGEX);
                 if (!value) {
-                    invalidInputs.add(input.getName());
+                    if (invalidInputs.indexOf(input.getName()) == -1) {
+                        invalidInputs.add(input.getName());
+                    }
                     valid = false;
                 }
             }

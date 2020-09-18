@@ -1,2 +1,2 @@
-# Weka-Classifier
-Java project using Weka API for classification tasks.
+# Desktop application for medical diagnosis
+ Classification models are implemented using Weka API.
